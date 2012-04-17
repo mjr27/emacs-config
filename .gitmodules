@@ -1,0 +1,24 @@
+[submodule "ws-trim"]
+	path = ws-trim
+	url = git://github.com/emacsmirror/ws-trim.git
+[submodule "yasnippet"]
+	path = yasnippet
+	url = git://github.com/capitaomorte/yasnippet.git
+[submodule "auto-complete"]
+	path = auto-complete
+	url = https://github.com/m2ym/auto-complete
+[submodule "popup-el"]
+	path = popup-el
+	url = git://github.com/m2ym/popup-el.git
+[submodule "tabbar"]
+	path = tabbar
+	url = git://github.com/emacsmirror/tabbar.git
+[submodule "django-mode"]
+	path = django-mode
+	url = git://github.com/myfreeweb/django-mode.git
+[submodule "flymake-python"]
+	path = flymake-python
+	url = git://github.com/akaihola/flymake-python.git
+[submodule "js2-mode"]
+	path = js2-mode
+	url = git://github.com/mooz/js2-mode.git

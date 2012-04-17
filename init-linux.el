@@ -1,0 +1,1 @@
+(setq python-executable "python")
