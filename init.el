@@ -2,7 +2,7 @@
 (add-to-list 'load-path "./")
 (set 'basedir "~/.emacs.d/")
 (setq nfsdir basedir)
-
+(setq load-path (cons basedir load-path))
 (let ((default-directory basedir))
   (normal-top-level-add-subdirs-to-load-path))
 
@@ -72,25 +72,19 @@
 (set-scroll-bar-mode `right)
 
 
-(setq c-basic-offset 2)
-(setq js-indent-level 2)
-
-
-
-
 (if (equal window-system 'w32)
-  (load-file "init-windows.el")
-  (load-file "init-linux.el")
+  (load "init-windows.el")
+  (load "init-linux.el")
   )
 
-(load-file "init-python.el")
-(load-file "init-js.el")
+(load "init-python.el")
+(load "init-js.el")
 
-(load-file "mjr-hotkeys.el")
+(load "mjr-hotkeys.el")
 
-(load-file "mjr-tabbar.el")
+(load "mjr-tabbar.el")
 
-(load-file "mjr-colors.el")
+(load "mjr-colors.el")
 
 
 (custom-set-variables
