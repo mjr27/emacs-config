@@ -22,3 +22,6 @@
 [submodule "scss-mode"]
 	path = scss-mode
 	url = git://github.com/antonj/scss-mode.git
+[submodule "flymake-python"]
+	path = flymake-python
+	url = git@github.com:mjr27/flymake-python.git
