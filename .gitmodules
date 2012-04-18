@@ -25,3 +25,6 @@
 [submodule "flymake-python"]
 	path = flymake-python
 	url = git@github.com:mjr27/flymake-python.git
+[submodule "html-helper-mode"]
+	path = html-helper-mode
+	url = git://github.com/emacsmirror/html-helper-mode.git
