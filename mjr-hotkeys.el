@@ -1,6 +1,11 @@
 (define-key global-map [(control z)] 'undo)
 
-(global-set-key [f11] 'speedbar)
+(defun dired-current-buffer()
+  (interactive)
+  (dired nil)
+)
+
+(global-set-key [f11] 'dired-current-buffer)
 
 ;; tabbar navigation
 (global-set-key (kbd "M-<right>") 'tabbar-forward-tab)
@@ -111,8 +116,4 @@
 (define-key python-mode-map (kbd "S-SPC") 'flymake-display-err-message-for-current-line)
 (define-key python-mode-map (kbd "C-<down>") 'show-next-flymake-error)
 (define-key python-mode-map (kbd "C-<up>") 'show-prev-flymake-error)
-;; (define-key python-mode-map (kbd "S-SPC") 'flymake-display-err-menu-for-current-line)
-;; (define-key python-mode-map (kbd "C-<down>") 'flymake-goto-next-error)
-;; (define-key python-mode-map (kbd "C-<up>") 'flymake-goto-prev-error)
-
 
