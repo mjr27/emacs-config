@@ -23,6 +23,9 @@
   )
 (global-auto-complete-mode t)
 
+;;;
+; autosaving deskop
+(desktop-save-mode t)
 
 ;;
 ; Whitespaces @ eol trimming
