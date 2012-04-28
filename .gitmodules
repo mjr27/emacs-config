@@ -28,3 +28,6 @@
 [submodule "html-helper-mode"]
 	path = html-helper-mode
 	url = git://github.com/emacsmirror/html-helper-mode.git
+[submodule "jslint"]
+	path = jslint
+	url = git://github.com/douglascrockford/JSLint.git

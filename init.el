@@ -130,6 +130,7 @@
  '(js2-cleanup-whitespace t)
  '(js2-enter-indents-newline t)
  '(js2-highlight-level 3)
+ '(js2-mode-show-parse-errors t)
  '(js2-mode-show-strict-warnings t)
  '(require-final-newline t)
  '(show-paren-mode t)

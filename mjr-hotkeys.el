@@ -114,8 +114,9 @@
     (flymake-goto-prev-error)
     (flymake-display-err-message-for-current-line)))
 
+;; (global-set-key
 
-(define-key python-mode-map (kbd "S-SPC") 'flymake-display-err-message-for-current-line)
-(define-key python-mode-map (kbd "C-<down>") 'show-next-flymake-error)
-(define-key python-mode-map (kbd "C-<up>") 'show-prev-flymake-error)
+(global-set-key (kbd "S-SPC") 'flymake-display-err-message-for-current-line)
+(global-set-key (kbd "C-<down>") 'show-next-flymake-error)
+(global-set-key (kbd "C-<up>") 'show-prev-flymake-error)
 
