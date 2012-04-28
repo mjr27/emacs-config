@@ -20,6 +20,8 @@
 (define-key global-map (kbd "C-x <left>") 'windmove-left)
 (define-key global-map (kbd "C-x <right>") 'windmove-right)
 
+(define-key global-map (kbd "C-v") 'yank)
+
 
 ;;;
 ; Ctrl-F4 to close tab

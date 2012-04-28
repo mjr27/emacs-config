@@ -20,9 +20,20 @@
       (list python-executable (append (list (expand-file-name (concat basedir "flymake-python/pyflymake.py"))) options (list local-file )))))
 
   (add-to-list 'flymake-allowed-file-name-masks
-	       '("\\.py\\'" flymake-pylint-init)))
+	       '("\\.py\\'" flymake-pylint-init))
+  ;; Do not lint html
+  (delete '("\\.html?\\'" flymake-xml-init) flymake-allowed-file-name-masks)
+)
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 
+
+
+;;;
+; This is hack for django-mode
+; being derived form html-helper-mode
+; that assures that partial templates
+; do not display red errors for opener tags
+;
 (define-derived-mode django-html-mode html-mode  "django-html"
   "Major mode for editing Django html templates (.djhtml).
 

@@ -74,7 +74,6 @@
 (setq display-time-interval 1)
 (setq display-time-format "%H:%M:%S")
 
-
 (global-linum-mode 1)
 
 (setq scroll-bar-mode-explicit t)
@@ -126,8 +125,11 @@
  '(display-time-mode t)
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
+ '(js2-auto-indent-p t)
+ '(js2-bounce-indent-p nil)
  '(js2-cleanup-whitespace t)
- '(js2-global-externs (list "exports" "template"))
+ '(js2-enter-indents-newline t)
+ '(js2-highlight-level 3)
  '(js2-mode-show-strict-warnings t)
  '(require-final-newline t)
  '(show-paren-mode t)
