@@ -5,41 +5,45 @@
 (add-to-list 'auto-mode-alist '("\\.html?$" . django-html-mode))
 (add-to-list 'auto-mode-alist '("\\.py\\'" . django-mode))
 
-(yas/load-directory "~/.emacs.d/django-mode/snippets")
+(yas/load-directory (concat basedir "django-mode/snippets"))
 
 (require 'html-helper-mode)
 
 (when (load "flymake" t)
   (defun flymake-pylint-init (&optional trigger-type)
     (let* ((temp-file (flymake-init-create-temp-buffer-copy
-		       'flymake-create-temp-inplace))
-	   (local-file (file-relative-name
-			temp-file
-			(file-name-directory buffer-file-name)))
-	   (options (when trigger-type (list "--trigger-type" trigger-type))))
+                       'flymake-create-temp-inplace))
+           (local-file (file-relative-name
+                        temp-file
+                        (file-name-directory buffer-file-name)))
+           (options (when trigger-type (list "--trigger-type" trigger-type))))
       (list python-executable (append (list (expand-file-name (concat basedir "flymake-python/pyflymake.py"))) options (list local-file )))))
 
   (add-to-list 'flymake-allowed-file-name-masks
-	       '("\\.py\\'" flymake-pylint-init))
+               '("\\.py\\'" flymake-pylint-init))
   ;; Do not lint html
   (delete '("\\.html?\\'" flymake-xml-init) flymake-allowed-file-name-masks)
-)
+  )
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 
-
+(defun init-python-callback ()
+  (set-variable 'py-indent-offset 4)
+  (set-variable 'indent-tabs-mode nil)
+  (define-key python-mode-map (kbd "RET") 'newline-and-indent)
+  )
+(add-hook 'python-mode-hook 'init-python-callback)
+(add-hook 'django-mode-hook 'init-python-callback)
 
 ;;;
-; This is hack for django-mode
-; being derived form html-helper-mode
-; that assures that partial templates
-; do not display red errors for opener tags
-;
+;; This is hack for django-mode
+;; being derived form html-helper-mode
+;; that assures that partial templates
+;; do not display red errors for opener tags
+;;
 (define-derived-mode django-html-mode html-mode  "django-html"
   "Major mode for editing Django html templates (.djhtml).
-
 \\{django-html-mode-map}"
   :group 'django-html
-
   ;; it mainly from nxml-mode font lock setting
   (set (make-local-variable 'font-lock-defaults)
        '((django-html-font-lock-keywords)
@@ -51,7 +55,6 @@
 (defconst django-html-font-lock-keywords
   (append
    html-helper-font-lock-keywords
-
    `(;; comment
      (,(rx (eval django-html-open-comment)
            (1+ space)

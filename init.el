@@ -17,10 +17,6 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories (concat basedir "ac-dict"))
 (ac-config-default)
-(defun run-autocomplete ()
-  (interactive)
-  (ac-config-default)
-  )
 (global-auto-complete-mode t)
 
 ;;;
@@ -108,15 +104,12 @@
 
 (load "mjr-colors.el")
 
-
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(ac-auto-start nil)
- '(ac-ignore-case nil)
- '(ac-trigger-key nil)
+ '(ac-auto-start 4)
  '(backup-inhibited t t)
  '(blink-cursor-delay 0.3)
  '(blink-cursor-mode nil)
