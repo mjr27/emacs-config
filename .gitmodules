@@ -31,3 +31,6 @@
 [submodule "jslint"]
 	path = jslint
 	url = git://github.com/douglascrockford/JSLint.git
+[submodule "_pony-mode"]
+	path = _pony-mode
+	url = git://github.com/davidmiller/pony-mode.git

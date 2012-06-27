@@ -31,15 +31,15 @@
 (setq ws-trim-global-modes '(guess (not message-mode eshell-mode)))
 (add-hook 'ws-trim-method-hook 'joc-no-tabs-in-python-hook)
 (defun joc-no-tabs-in-python-hook ()
-  "WS-TRIM Hook to strip all tabs in python/javascript"
-  (interactive)
-  (if (string= major-mode "python-mode")
-      (ws-trim-tabs))
-  (if (string= major-mode "js2-mode")
-      (ws-trim-tabs))
-  (if (string= major-mode "django-mode")
-      (ws-trim-tabs))
-  )
+ "WS-TRIM Hook to strip all tabs in python/javascript"
+ (interactive)
+ (if (string= major-mode "python-mode")
+     (ws-trim-tabs))
+ (if (string= major-mode "js2-mode")
+     (ws-trim-tabs))
+ (if (string= major-mode "django-mode")
+     (ws-trim-tabs))
+ )
 
 ;;
 ; YaSnippet
@@ -109,7 +109,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(ac-auto-start 4)
+ '(ac-auto-start 2)
  '(backup-inhibited t t)
  '(blink-cursor-delay 0.3)
  '(blink-cursor-mode nil)
@@ -118,6 +118,7 @@
  '(display-time-mode t)
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
+ '(indent-tabs-mode nil)
  '(js2-auto-indent-p t)
  '(js2-bounce-indent-p nil)
  '(js2-cleanup-whitespace t)

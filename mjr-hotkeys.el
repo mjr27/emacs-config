@@ -114,9 +114,15 @@
     (flymake-goto-prev-error)
     (flymake-display-err-message-for-current-line)))
 
-;; (global-set-key
-
 (global-set-key (kbd "S-SPC") 'flymake-display-err-message-for-current-line)
 (global-set-key (kbd "C-<down>") 'show-next-flymake-error)
 (global-set-key (kbd "C-<up>") 'show-prev-flymake-error)
 
+(defun mjr-goto-beginning ()
+  (interactive "^")
+  (let ((oldpos (point)))
+    (beginning-of-line-text)
+    (and (= oldpos (point))
+         (beginning-of-line))))
+
+(global-set-key (kbd "<home>") 'mjr-goto-beginning)
