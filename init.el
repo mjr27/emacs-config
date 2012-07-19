@@ -31,15 +31,15 @@
 (setq ws-trim-global-modes '(guess (not message-mode eshell-mode)))
 (add-hook 'ws-trim-method-hook 'joc-no-tabs-in-python-hook)
 (defun joc-no-tabs-in-python-hook ()
- "WS-TRIM Hook to strip all tabs in python/javascript"
- (interactive)
- (if (string= major-mode "python-mode")
-     (ws-trim-tabs))
- (if (string= major-mode "js2-mode")
-     (ws-trim-tabs))
- (if (string= major-mode "django-mode")
-     (ws-trim-tabs))
- )
+  "WS-TRIM Hook to strip all tabs in python/javascript"
+  (interactive)
+  (if (string= major-mode "python-mode")
+      (ws-trim-tabs))
+  (if (string= major-mode "js2-mode")
+      (ws-trim-tabs))
+  (if (string= major-mode "django-mode")
+      (ws-trim-tabs))
+  )
 
 ;;
 ; YaSnippet
@@ -104,21 +104,29 @@
 
 (load "mjr-colors.el")
 
+(require 'undo-tree)
+(global-undo-tree-mode)
+
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+(setq scroll-step 1) ;; keyboard scroll one line at a time
+(setq scroll-conservatively 10000)
+
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(ac-auto-start 2)
  '(backup-inhibited t t)
- '(blink-cursor-delay 0.3)
  '(blink-cursor-mode nil)
  '(current-language-environment "UTF-8")
  '(debug-on-error t)
  '(display-time-mode t)
+ '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
- '(indent-tabs-mode nil)
  '(js2-auto-indent-p t)
  '(js2-bounce-indent-p nil)
  '(js2-cleanup-whitespace t)
@@ -136,10 +144,13 @@
 
 
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(flymake-errline ((t (:underline (:color "#ff3333" :style wave)))))
+ '(flymake-infoline ((t (:underline (:color "#33ff33" :style wave)))))
+ '(flymake-warnline ((t (:underline (:color "#99ffff" :style wave)))))
  '(tabbar-button ((t (:inherit tabbar-default :box (:line-width 1 :color "grey50")))))
  '(tabbar-default ((t (:inherit variable-pitch :background "grey50" :foreground "#000d13" :box (:line-width 5 :color "grey50") :weight bold :family "Liberation Mono"))))
  '(tabbar-highlight ((t nil)))
